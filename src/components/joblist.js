@@ -6,16 +6,13 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import MoreInfo from '../components/MoreInfo';
 import { useNavigate } from "react-router-dom";
 import MoonLoader from "react-spinners/ClipLoader";
-import * as ReactDOM from 'react-dom';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Item = styled('div')(({ theme }) => ({
@@ -33,12 +30,8 @@ function getWindowSize() {
 const JobsList = props => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [Jobs, setJobs] = useState([]);
-  const [PageCounter, setPageCounter] = useState(0);
   const [searchName, setSearchName ] = useState("");
   const [Loading, setLoading ] = useState(false);
-  const [searchAdress, setSearchAdress ] = useState("");
-  const jobarray =[];
-  const { index, style } = props;
   
 
 
@@ -61,14 +54,9 @@ const JobsList = props => {
     setSearchName(searchName);
   };
 
-  const onChangeSearchAdress = e => {
-    const searchAdress = e.target.value;
-    setSearchAdress(searchAdress);
-  };
 
   const retrieveJobs = () => {
-    console.log("counter:"+PageCounter);
-    JobsDataService.getAll(PageCounter)
+    JobsDataService.getAll()
       .then(response => {
         setJobs(response.data.jobs);
         console.log(response.data.jobs);
@@ -79,28 +67,7 @@ const JobsList = props => {
       });
   };
 
-  const refreshList = () => {
-    retrieveJobs();
-  };
 
-  const find = (query, by) => {
-    JobsDataService.find(query, by)
-      .then(response => {
-        console.log(response.data.jobs);
-        setJobs(response.data.jobs);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
-
-  const findByName = () => {
-    find(searchName, "name")
-  };
-
-  const findByAdress = () => {
-    find(searchAdress, "adress")
-  };
 
   const navigate = useNavigate();
   if(windowSize.innerWidth>650){
@@ -179,11 +146,11 @@ const JobsList = props => {
         </TableHead>
         <TableBody>
           {Jobs.filter((Jobs)=>{
-            if(searchName==""){
+            if(searchName===""){
               return Jobs
             }else if(Jobs.name.toLowerCase().includes(searchName.toLowerCase())){
               return Jobs
-            }
+            }return null;
           }).map((Jobs) => (
             <TableRow
               key={Jobs.name}
@@ -293,11 +260,11 @@ const JobsList = props => {
         </TableHead>
         <TableBody>
         {Jobs.filter((Jobs)=>{
-            if(searchName==""){
+            if(searchName===""){
               return Jobs
             }else if(Jobs.name.toLowerCase().includes(searchName.toLowerCase())){
               return Jobs
-            }
+            }return null;
           }).map((Jobs) => (
             <TableRow
               key={Jobs.name}

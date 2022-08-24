@@ -1,6 +1,5 @@
 import React from 'react'
 import {Routes,Route } from 'react-router-dom';
-import DashBoard from './components/dashboard'
 import Main from './main'
 import Apply from './components/Apply'
 import MoreInfo from './components/MoreInfo'

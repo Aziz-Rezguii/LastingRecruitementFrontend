@@ -3,7 +3,6 @@ import React from 'react'
 import FooterDisabled from './FooterDisabled'
 import HeroApply from './HeroApply'
 import './Apply.css'
-import RowAndColumnSpacing from './ListFormGrid'
 import JobsList from './joblist'
 import NavbarDisabled from './NavbarDisabled'
 const Apply = () => {
