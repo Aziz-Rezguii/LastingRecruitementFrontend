@@ -1,0 +1,56 @@
+.FindWork {
+    margin: 5rem auto;
+    padding: auto;
+    width: 100%;
+}
+
+.FindWork .container {
+    width: 1240px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.FindWork .col-2 {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.FindWork .col-2 p:nth-child(2) {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: .5rem 0;
+}
+.FindWork .col-2 p:nth-child(3) {
+    margin: .5rem 0;
+}
+
+
+
+
+
+@media screen and (max-width: 940px) {
+    .FindWork .container {
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    .FindWork iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
