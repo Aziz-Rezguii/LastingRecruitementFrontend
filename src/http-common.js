@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL:"http://localhost:5000/api/v1",
+    baseURL:"https://lastingrecruitement-backend.herokuapp.com/api/v1/jobs",
     headers:{
         "Content-type":"application/json"
     }
