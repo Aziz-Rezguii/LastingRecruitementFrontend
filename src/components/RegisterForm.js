@@ -60,7 +60,7 @@ export default function RegisterForm() {
           <TextField label="Last Name" type="text" name="user_Last_name" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
-          <TextField label="Social Security Number" type="text" name="Social_Security_Number" /><br></br>
+          <TextField label="SS Last Four" type="text" name="Social_Security_Number" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
           <TextField label="Email" type="email" name="user_email" /><br></br>

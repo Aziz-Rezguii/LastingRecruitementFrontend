@@ -5,7 +5,7 @@ const HeroApply = () => {
     return (
         <div className='heroapply'>
             <div className='content'>
-                <p>Company name</p>
+                <p>Lasting Recruitment</p>
                 <p>New Opportunities</p>
                 <p>Find your next great job.</p>
             </div>
