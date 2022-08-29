@@ -51,25 +51,29 @@ export default function RegisterForm() {
     <form ref={form} onSubmit={sendEmail}>
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',paddingLeft:10 }}>
         <ListItem alignItems="flex-start">
-          <TextField label="First Name" type="text" name="user_first_name" /><br></br>
+          <TextField required label="First Name" type="text" name="user_first_name" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
           <TextField label="Middle Name" type="text" name="user_Middle_name" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
-          <TextField label="Last Name" type="text" name="user_Last_name" /><br></br>
+          <TextField required label="Last Name" type="text" name="user_Last_name" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
-          <TextField label="SS Last Four" type="text" name="Social_Security_Number" /><br></br>
+          <TextField required label="SS Last Four" type="text" name="Social_Security_Number" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
-          <TextField label="Email" type="email" name="user_email" /><br></br>
+          <TextField required label="Email" type="email" name="user_email" /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
-          <TextField label="Phone Number" type="text" name="Phone_Number"  /><br></br>
+          <TextField required label="Phone Number" type="text" name="Phone_Number"  /><br></br>
         </ListItem>
         <ListItem alignItems="flex-start">
           <TextField label="Your Job ID" type="text" name="Job_ID" value={location.state.id}  /><br></br>
+        </ListItem>
+        <p style={{ fontSize: 17}}>Resume (Attachments up to 500kb)</p>
+        <ListItem alignItems="flex-start">
+          <input required type="file" name="Resume_pdf" id="Resume_pdf"/>
         </ListItem>
         <ListItem alignItems="flex-start">
           <Button sx={{ color: 'black', backgroundColor: '#FFEA00', borderColor: '#FFEA00' }} style={{marginLeft:70}} variant="contained" type="submit" value="Send" >Submit</Button>
