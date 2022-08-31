@@ -34,7 +34,7 @@ export default function RegisterForm() {
     console.log("asss");
     e.preventDefault();
 
-    emailjs.sendForm('service_cft4auq', 'template_jj7hfrd', form.current, 'WbkpU6NDgUVYWCU5H')
+    emailjs.sendForm('service_lx7lkjd', 'template_jj7hfrd', form.current, 'WbkpU6NDgUVYWCU5H')
       .then((result) => {
           console.log(result.text);
           navigate("/AfterSubmit")
