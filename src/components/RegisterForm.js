@@ -18,6 +18,8 @@ export default function RegisterForm() {
   const location = useLocation();
   const form = useRef();
   const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [status, setstatus] = useState("");
+
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -31,7 +33,6 @@ export default function RegisterForm() {
   }, []);
 
   const sendEmail = (e) => {
-    console.log("asss");
     e.preventDefault();
 
     emailjs.sendForm('service_lx7lkjd', 'template_jj7hfrd', form.current, 'WbkpU6NDgUVYWCU5H')
@@ -39,7 +40,8 @@ export default function RegisterForm() {
           console.log(result.text);
           navigate("/AfterSubmit")
       }, (error) => {
-          console.log(error.text);
+        setstatus(error.text);
+        console.log(error.text);
       });
   };
 
@@ -78,6 +80,7 @@ export default function RegisterForm() {
         <ListItem alignItems="flex-start">
           <Button sx={{ color: 'black', backgroundColor: '#FFEA00', borderColor: '#FFEA00' }} style={{marginLeft:70}} variant="contained" type="submit" value="Send" >Submit</Button>
         </ListItem>
+        {status}
         </List>
       
     </form>
