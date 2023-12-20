@@ -27,7 +27,6 @@ function getWindowSize() {
 }
 
 const JobsList = (props) => {
-   // const [windowSize, setWindowSize] = useState(getWindowSize());
   // Remove setJobs as it's not used in this example
   // const [Jobs, setJobs] = useState([
   const [Jobs] = useState([
@@ -46,8 +45,9 @@ const JobsList = (props) => {
   const [searchName, setSearchName] = useState("");
 
   useEffect(() => {
+    // Remove the reference to setWindowSize
     function handleWindowResize() {
-      setWindowSize(getWindowSize());
+      // setWindowSize(getWindowSize());
     }
 
     window.addEventListener("resize", handleWindowResize);
