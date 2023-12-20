@@ -27,7 +27,7 @@ function getWindowSize() {
 }
 
 const JobsList = (props) => {
-    const [windowSize, setWindowSize] = useState(getWindowSize());
+   // const [windowSize, setWindowSize] = useState(getWindowSize());
   // Remove setJobs as it's not used in this example
   // const [Jobs, setJobs] = useState([
   const [Jobs] = useState([
