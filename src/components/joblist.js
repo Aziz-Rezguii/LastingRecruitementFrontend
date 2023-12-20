@@ -46,15 +46,15 @@ const JobsList = (props) => {
 
   useEffect(() => {
     // Remove the reference to setWindowSize
-    function handleWindowResize() {
-      // setWindowSize(getWindowSize());
-    }
+    // function handleWindowResize() {
+    //   setWindowSize(getWindowSize());
+    // }
 
-    window.addEventListener("resize", handleWindowResize);
+    // window.addEventListener("resize", handleWindowResize);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
+    // return () => {
+    //   window.removeEventListener("resize", handleWindowResize);
+    // };
   }, []);
 
   const onChangeSearchName = (e) => {
