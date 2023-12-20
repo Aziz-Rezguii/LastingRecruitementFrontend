@@ -40,6 +40,28 @@ const JobsList = (props) => {
       shifts: "Sample Shifts",
       date: "2023-12-20",
       jobrequirements: "Sample Job Requirements",
+    },    
+    {
+      _id: "2",
+      name: "Sample Job",
+      payrate: "$20 per hour",
+      industry: "Sample Industry",
+      address: "Sample Address",
+      jobduties: "Sample Job Duties",
+      shifts: "Sample Shifts",
+      date: "2023-12-20",
+      jobrequirements: "Sample Job Requirements",
+    },    
+    {
+      _id: "3",
+      name: "Sample Job",
+      payrate: "$20 per hour",
+      industry: "Sample Industry",
+      address: "Sample Address",
+      jobduties: "Sample Job Duties",
+      shifts: "Sample Shifts",
+      date: "2023-12-20",
+      jobrequirements: "Sample Job Requirements",
     },
   ]);
   const [searchName, setSearchName] = useState("");
