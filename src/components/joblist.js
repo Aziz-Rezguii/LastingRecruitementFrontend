@@ -21,10 +21,10 @@ const Item = styled("div")(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function getWindowSize() {
-  const { innerWidth, innerHeight } = window;
-  return { innerWidth, innerHeight };
-}
+//function getWindowSize() {
+//  const { innerWidth, innerHeight } = window;
+//  return { innerWidth, innerHeight };
+//}
 
 const JobsList = (props) => {
   // Remove setJobs as it's not used in this example
